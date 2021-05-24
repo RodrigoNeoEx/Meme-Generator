@@ -13,7 +13,6 @@ function createTextInput() {
   document.getElementById('meme-image-container').appendChild(createInput);
 }
 
-
 function createTextOnContainer() {
   const memeText = document.createElement('p');
   memeText.id = 'meme-text';
@@ -31,4 +30,18 @@ function createImageCountainer() {
   const imageContainer = document.createElement('div');
   imageContainer.id = 'meme-image';
   document.getElementById('meme-image-container').appendChild(imageContainer);
+}
+
+function createImgOutput() {
+  const img = document.createElement('img');
+  img.id = 'output';
+  img.src = '';
+  document.getElementById('meme-image').appendChild(img);
+}
+
+function createMemeImage() {
+  const memeImg = document.createElement('img');
+  memeImg.id = 'memeOutput';
+  memeImg.src = '';
+  document.getElementById('meme-image').appendChild(memeImg);
 }
