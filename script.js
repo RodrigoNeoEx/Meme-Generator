@@ -90,7 +90,7 @@ function createBtnsTitle() {
 }
 
 function createMemeBtns() {
-  for(let index = 0; index < 4; index += 1) {
+  for(let index = 1; index < 5; index += 1) {
     let buttonMeme = document.createElement('button');
     buttonMeme.id = `meme-${[index]}`;
     buttonMeme.className = `meme-${[index]}`;
