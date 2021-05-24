@@ -88,3 +88,43 @@ function createBtnsTitle() {
   sectionText.innerHTML = 'Choose your Element';
   document.getElementById('allBorderButtons').appendChild(sectionText);
 }
+
+function createMemeBtns() {
+  for(let index = 0; index < 4; index += 1) {
+    let buttonMeme = document.createElement('button');
+    buttonMeme.id = `meme-${[index]}`;
+    buttonMeme.className = `meme-${[index]}`;
+    document.getElementById('allMemes').appendChild(buttonMeme);
+  }
+}
+
+function createElementsBtns() {
+createBtnFire();
+createBtnWater();
+createBtnEarth();
+createBtnsTitle();
+}
+
+function createStructure() {
+  createMainTitle();
+  createTextInput();
+  createInputImage();
+  createTextOnContainer();
+  createImageCountainer();
+  createImgOutput();
+  createMemeImage();
+  createSectionForAllBtnMemes();
+  createSectionForBtns();
+}
+
+
+function callAllStructure() {
+  createStructure();
+  createElementsBtns();
+  createMemeBtns();
+}
+
+window.onload = function() {
+  callAllStructure();
+}
+
