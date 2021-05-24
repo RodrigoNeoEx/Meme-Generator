@@ -45,3 +45,15 @@ function createMemeImage() {
   memeImg.src = '';
   document.getElementById('meme-image').appendChild(memeImg);
 }
+
+function createSectionForAllBtnMemes() {
+  const buttonMemesSection = document.createElement('section');
+  buttonMemesSection.id = 'allMemes';
+  document.body.appendChild(buttonMemesSection);
+}
+
+function createSectionForBtns() {
+  const buttonBorderSection = document.createElement('section');
+  buttonBorderSection.id = 'allBorderButtons';
+  document.body.appendChild(buttonBorderSection);
+}
