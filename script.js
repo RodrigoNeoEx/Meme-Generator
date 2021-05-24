@@ -146,11 +146,47 @@ function loadInputedFile(event) {
   }
 }
 
+function buttonFire() {
+  const fire = document.getElementById('meme-image-container');
+  if (fire.classList.value.includes('fire')) {
+    fire.classList.remove('fire');
+  } else {
+    fire.classList.add('fire');
+    fire.classList.remove('water', 'earth');
+  }
+}
+
+function buttonWater() {
+  const water = document.getElementById('meme-image-container');
+  if (water.classList.value.includes('water')) {
+    water.classList.remove('water');
+  } else {
+    water.classList.add('water');
+    water.classList.remove('fire', 'earth');
+  }
+}
+
+function buttonEarth() {
+  const earth = document.getElementById('meme-image-container');
+  if (earth.classList.value.includes('earth')) {
+    earth.classList.remove('earth');
+  } else {
+    earth.classList.add('earth');
+    earth.classList.remove('fire', 'water');
+  }
+}
+
 function callListeners() {
   const textContainer = document.getElementById('text-input');
   textContainer.addEventListener('keyup', setInputText);
   const insertImage = document.getElementById('meme-insert');
   insertImage.addEventListener('change', loadInputedFile);
+  const eventButtonFire = document.getElementById('fire');
+  eventButtonFire.addEventListener('click', buttonFire);
+  const eventButtonWater = document.getElementById('water');
+  eventButtonWater.addEventListener('click', buttonWater);
+  const eventButtonEarth = document.getElementById('earth');
+  eventButtonEarth.addEventListener('click', buttonEarth);
 }
 
 window.onload = function() {
