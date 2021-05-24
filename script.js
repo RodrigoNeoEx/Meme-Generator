@@ -57,3 +57,34 @@ function createSectionForBtns() {
   buttonBorderSection.id = 'allBorderButtons';
   document.body.appendChild(buttonBorderSection);
 }
+
+function createBtnFire() {
+  const buttonFire = document.createElement('button');
+  buttonFire.id = 'fire';
+  buttonFire.innerHTML = 'Set Fire';
+  buttonFire.style.backgroundColor = 'red';
+  document.getElementById('allBorderButtons').appendChild(buttonFire);
+}
+
+function createBtnWater() {
+  const buttonWater = document.createElement('button');
+  buttonWater.id = 'water';
+  buttonWater.innerHTML = 'Float in Water';
+  buttonWater.style.backgroundColor = 'blue';
+  document.getElementById('allBorderButtons').appendChild(buttonWater);
+}
+
+function createBtnEarth() {
+  const buttonEarth = document.createElement('button');
+  buttonEarth.id = 'earth';
+  buttonEarth.innerHTML = 'Feel the Nature';
+  buttonEarth.style.backgroundColor = 'green';
+  document.getElementById('allBorderButtons').appendChild(buttonEarth);
+}
+
+function createBtnsTitle() {
+  const sectionText = document.createElement('p');
+  sectionText.className = 'elements';
+  sectionText.innerHTML = 'Choose your Element';
+  document.getElementById('allBorderButtons').appendChild(sectionText);
+}
