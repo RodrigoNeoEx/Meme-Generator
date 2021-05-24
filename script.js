@@ -124,7 +124,17 @@ function callAllStructure() {
   createMemeBtns();
 }
 
+function setInputText() {
+  const textInputed = document.getElementById('text-input');
+  let textContainer = document.getElementById('meme-text');
+  if(textInputed.value !== '') {
+    textContainer.innerText = textInputed.value;
+  }
+}
+
 window.onload = function() {
   callAllStructure();
+  // callListeners();
+  inputText();
 }
 
