@@ -176,6 +176,109 @@ function buttonEarth() {
   }
 }
 
+function setMeme1() {
+  let output = document.getElementById('output');
+  if(output.src === 'http://127.0.0.1:5500/imgs/meme1.png') {
+    output.setAttribute('src', '');
+  } else {
+    output.setAttribute('src','http://127.0.0.1:5500/imgs/meme1.png');
+  }
+}
+
+function setMeme2() {
+  let output = document.getElementById('output');
+  let memes = document.getElementById('memeOutput');
+  let divSrc = document.getElementById('meme-image');
+  if(memes.src === 'http://127.0.0.1:5500/imgs/meme2.png') {
+    memes.setAttribute('src', '');
+    divSrc.setAttribute('src', '');
+    output.setAttribute('src', '');
+  } else {
+    memes.src = 'http://127.0.0.1:5500/imgs/meme2.png';
+    divSrc.setAttribute('src','http://127.0.0.1:5500/imgs/meme2.png');
+    output.setAttribute('src','http://127.0.0.1:5500/imgs/meme2.png');
+  }
+}
+
+function setMeme3() {
+  let output = document.getElementById('output');
+  let memes = document.getElementById('memeOutput');
+  let divSrc = document.getElementById('meme-image');
+  if(memes.src === 'http://127.0.0.1:5500/imgs/meme3.png') {
+    memes.setAttribute('src', '');
+    divSrc.setAttribute('src', '');
+    output.setAttribute('src', '');
+  } else {
+    memes.src = 'http://127.0.0.1:5500/imgs/meme3.png';
+    divSrc.setAttribute('src','http://127.0.0.1:5500/imgs/meme3.png');
+    output.setAttribute('src','http://127.0.0.1:5500/imgs/meme3.png');
+  }
+}
+
+function setMeme4() {
+  let output = document.getElementById('output');
+  let memes = document.getElementById('memeOutput');
+  let divSrc = document.getElementById('meme-image');
+  if(memes.src === 'http://127.0.0.1:5500/imgs/meme4.png') {
+    memes.setAttribute('src', '');
+    divSrc.setAttribute('src', '');
+    output.setAttribute('src', '');
+  } else {
+    memes.src = 'http://127.0.0.1:5500/imgs/meme4.png';
+    divSrc.setAttribute('src','http://127.0.0.1:5500/imgs/meme4.png');
+    output.setAttribute('src','http://127.0.0.1:5500/imgs/meme4.png');
+  }
+}
+
+function playFire() {
+  let fire = document.getElementById('playFireBG');
+  let water = document.getElementById('playWaterBG');
+  let earth = document.getElementById('playEarthBG');
+  if (fire.style.display === "block") {
+    fire.style.display = "none";
+    water.style.display = "none";
+    earth.style.display = "none";
+  } else {
+    fire.style.display = "block";
+    water.style.display = "none";
+    earth.style.display = "none";
+  }
+  fire.play();
+}
+
+function playWater() {
+  let fire = document.getElementById('playFireBG');
+  let water = document.getElementById('playWaterBG');
+  let earth = document.getElementById('playEarthBG');
+  if (water.style.display === "block") {
+    fire.style.display = "none";
+    water.style.display = "none";
+    earth.style.display = "none";
+  } else {
+    water.style.display = "block";
+    fire.style.display = "none";
+    earth.style.display = "none";
+  }
+  water.play();
+}
+
+function playEarth() {
+  let fire = document.getElementById('playFireBG');
+  let water = document.getElementById('playWaterBG');
+  let earth = document.getElementById('playEarthBG');
+  if (earth.style.display === "block") {
+    fire.style.display = "none";
+    water.style.display = "none";
+    earth.style.display = "none";
+
+  } else {
+    earth.style.display = "block";
+    water.style.display = "none";
+    fire.style.display = "none";
+  }
+  earth.play();
+}
+
 function callListeners() {
   const textContainer = document.getElementById('text-input');
   textContainer.addEventListener('keyup', setInputText);
@@ -183,15 +286,25 @@ function callListeners() {
   insertImage.addEventListener('change', loadInputedFile);
   const eventButtonFire = document.getElementById('fire');
   eventButtonFire.addEventListener('click', buttonFire);
+  eventButtonFire.addEventListener('click', playFire);
   const eventButtonWater = document.getElementById('water');
   eventButtonWater.addEventListener('click', buttonWater);
+  eventButtonWater.addEventListener('click', playWater);
   const eventButtonEarth = document.getElementById('earth');
   eventButtonEarth.addEventListener('click', buttonEarth);
+  eventButtonEarth.addEventListener('click', playEarth);
+  const firstButtonMeme = document.getElementById('meme-1');
+  firstButtonMeme.addEventListener('click', setMeme1);
+  const secondButtonMeme = document.getElementById('meme-2');
+  secondButtonMeme.addEventListener('click', setMeme2);
+  const thirdButtonMeme = document.getElementById('meme-3');
+  thirdButtonMeme.addEventListener('click', setMeme3);
+  const fourthButtonMeme = document.getElementById('meme-4');
+  fourthButtonMeme.addEventListener('click', setMeme4);
 }
 
 window.onload = function() {
   callAllStructure();
   callListeners();
-
 }
 
