@@ -131,10 +131,31 @@ function setInputText() {
     textContainer.innerText = textInputed.value;
   }
 }
+function loadInputedFile(event) {
+  let output = document.getElementById('output');
+  let memeOutput = document.getElementById('memeOutput');
+  let divSrc = document.getElementById('meme-image');
+  if(output !== '') {
+    output.src = URL.createObjectURL(event.target.files[0]);
+    memeOutput.setAttribute('src', '');
+    divSrc.setAttribute('src', '');
+  } else {
+    output.onload = function() {
+      URL.revokeObjectURL(output.src);
+    }
+  }
+}
+
+function callListeners() {
+  const textContainer = document.getElementById('text-input');
+  textContainer.addEventListener('keyup', setInputText);
+  const insertImage = document.getElementById('meme-insert');
+  insertImage.addEventListener('change', loadInputedFile);
+}
 
 window.onload = function() {
   callAllStructure();
-  // callListeners();
-  inputText();
+  callListeners();
+
 }
 
